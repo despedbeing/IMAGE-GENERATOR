@@ -1,0 +1,6 @@
+from diffusers import ControlNetModel, StableDiffusionControlNetPipeline
+
+controlnet = ControlNetModel.from_pretrained("diffusers/controlnet-canny-sdxl-1.0-mid")
+pipeline = StableDiffusionControlNetPipeline.from_pretrained(
+	"stabilityai/stable-diffusion-xl-base-1.0", controlnet=controlnet
+)
